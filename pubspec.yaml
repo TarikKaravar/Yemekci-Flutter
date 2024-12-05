@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  dotlottie_loader: ^0.0.4
   flutter:
     sdk: flutter
   go_router: ^14.6.2
@@ -21,6 +22,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/languages/
+    - assets/motions/
+
+    
+
+
 
 
     
