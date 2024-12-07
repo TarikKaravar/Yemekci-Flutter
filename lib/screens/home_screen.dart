@@ -34,17 +34,23 @@ class HomeScreen extends StatelessWidget {
               height: 200,
               // color: Colors.blue,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.black87,
-                  ),
-                  const SizedBox(height: 10),
-                  
-                ],
-              ),
+ mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    CircleAvatar(
+      radius: 40, // Yuvarlak çerçeve boyutu
+      backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
+      backgroundColor: Colors.black, // Arka plan rengi
+    ),
+    const SizedBox(height: 10),
+    const Text(
+      'Tarık Karavar',
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 18,
+      ),
+    ),
+  ],
+),
             ),
             // Menü öğeleri
 
