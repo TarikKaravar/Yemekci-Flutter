@@ -10,7 +10,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 90, 85, 80),
+      backgroundColor: Color.fromARGB(255, 240, 121, 2),
       body: SizedBox.expand(
         //width: double.infinity,
         child: Column(
@@ -36,7 +36,7 @@ class LoadingScreen extends StatelessWidget {
               onTap:() => context.go("/home"),
               child: SizedBox(
                 width: 150,
-                child: DotLottieLoader.fromAsset("assets/motions/loading.lottie",
+                child: DotLottieLoader.fromAsset("assets/motions/loading1.lottie",
                       frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
                     if (dotlottie != null) {
                       return Lottie.memory(dotlottie.animations.values.single);
