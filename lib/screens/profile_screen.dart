@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56), // AppBar yüksekliği
+        preferredSize: const Size.fromHeight(56), 
         child: ClipRRect(
           child: AppBar(
             centerTitle: true,
@@ -30,8 +30,8 @@ class ProfileScreen extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color.fromARGB(255, 240, 121, 2), // Turuncu
-              Colors.white, // Beyaz
+              const Color.fromARGB(255, 240, 121, 2),
+              Colors.white, 
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

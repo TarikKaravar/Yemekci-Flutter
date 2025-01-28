@@ -12,10 +12,8 @@ class LoadingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 240, 121, 2),
       body: SizedBox.expand(
-        //width: double.infinity,
         child: Column(
           children: [
-            // Logo bölümü
             Expanded(
               child: Container(
                 width: 150,
@@ -27,11 +25,6 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
             
-           
-            
-            // Yükleniyor yazısı
-           // CircularProgressIndicator(),
-
             InkWell(
               onTap:() => context.go("/home"),
               child: SizedBox(
@@ -49,9 +42,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),  
 
-            // Boşluk
             SizedBox(height: 20),
-
 
           ],
         ),

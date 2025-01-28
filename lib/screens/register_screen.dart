@@ -69,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ],
           ),
         ),
-      ), // Center
-    ); // Scaffold
+      ), 
+    ); 
   }
 }

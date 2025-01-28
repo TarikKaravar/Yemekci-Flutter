@@ -12,8 +12,8 @@ class SearchScreen extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color.fromARGB(255, 240, 121, 2), // Turuncu
-              Colors.white, // Beyaz
+              const Color.fromARGB(255, 240, 121, 2), 
+              Colors.white, 
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

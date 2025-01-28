@@ -19,7 +19,6 @@ class _LoginScreenState extends State<LoginScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("Bilgilerinizi Girinizi"),
-        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
         behavior: SnackBarBehavior.floating,
         backgroundColor: Colors.red,
         showCloseIcon: true,
@@ -30,7 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
              ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("Şireniz minimum 8 haneli olmak zorundadır."),
-        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
         behavior: SnackBarBehavior.floating,
         backgroundColor: Colors.red,
         showCloseIcon: true,
@@ -68,7 +66,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: epostaYonetici,
                     decoration: InputDecoration(
                     hintText: "E-Posta",
-                   // helper: Text("E-Postanızı Giriniz"),
                     border: OutlineInputBorder(),
                     ),
                   ),
@@ -78,7 +75,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: sifreYonetici,
                     decoration: InputDecoration(
                     hintText: "Şifre",
-                   // helper: Text("Şifrenizi Giriniz"),
                     border: OutlineInputBorder(),
                     ),
                   ),
@@ -103,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ) 
         ),
-      ), // Center
-    ); // Scaffold
+      ), 
+    );
   }
 }

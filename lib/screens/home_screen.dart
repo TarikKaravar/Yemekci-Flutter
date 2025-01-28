@@ -4,31 +4,36 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _isAnimationVisible = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // Özelleştirilmiş AppBar
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56), 
+        preferredSize: const Size.fromHeight(56),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                const Color.fromARGB(255, 240, 121, 2), 
-                const Color.fromARGB(255, 240, 121, 2), 
+                const Color.fromARGB(255, 240, 121, 2),
+                const Color.fromARGB(255, 240, 121, 2),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
-            
           ),
           child: AppBar(
-            backgroundColor: Colors.transparent, 
-            elevation: 0, 
+            backgroundColor: Colors.transparent,
+            elevation: 0,
             title: const Text(
               'Ana Sayfa',
               style: TextStyle(
@@ -45,36 +50,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      // Drawer (Yan Menü)
       drawer: Drawer(
         backgroundColor: Colors.white,
         elevation: 0,
         child: Column(
           children: [
-            
-            Container(
-              height: 200,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 40, 
-                    backgroundImage: const AssetImage('assets/images/pp.jpg'), 
-                    backgroundColor: Colors.black, 
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Tarık Karavar',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            
+            const SizedBox(height: 16), // Boşluk
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
@@ -106,44 +87,64 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-
-    
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color.fromARGB(255, 240, 121, 2), // Turuncu
-              Colors.white, // Beyaz
+              const Color.fromARGB(255, 240, 121, 2),
+              Colors.white,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-
         ),
         child: Column(
           children: [
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: DotLottieLoader.fromAsset(
-                    "assets/motions/food.lottie",
-                    frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                      if (dotlottie != null) {
-                        return Lottie.memory(dotlottie.animations.values.single);
-                      } else {
-                        return Container();
-                      }
-                    },
+            if (_isAnimationVisible)
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: DotLottieLoader.fromAsset(
+                      "assets/motions/deneme2.lottie",
+                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                        if (dotlottie != null) {
+                          return Lottie.memory(
+                            dotlottie.animations.values.single,
+                            repeat: false,
+                            onLoaded: (composition) {
+                              Future.delayed(
+                                composition.duration,
+                                () {
+                                  setState(() {
+                                    _isAnimationVisible = false;
+                                  });
+                                },
+                              );
+                            },
+                          );
+                        } else {
+                          return Container();
+                        }
+                      },
+                    ),
                   ),
                 ),
               ),
-            ),
+            if (!_isAnimationVisible)
+              Expanded(
+                child: Center(
+                  child: const Text(
+                    "",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
-
+      
       bottomNavigationBar: const BottomMenu(),
     );
   }
