@@ -10,17 +10,40 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      // AppBar
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text('Ana Sayfa'),
-        actions: [
-          IconButton(
-            icon: const Icon(CupertinoIcons.app),
-            onPressed: () {},
+      backgroundColor: Colors.white,
+      // Özelleştirilmiş AppBar
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56), 
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 240, 121, 2), 
+                const Color.fromARGB(255, 240, 121, 2), 
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            
           ),
-        ],
+          child: AppBar(
+            backgroundColor: Colors.transparent, 
+            elevation: 0, 
+            title: const Text(
+              'Ana Sayfa',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(CupertinoIcons.app, color: Colors.black),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
       ),
 
       // Drawer (Yan Menü)
@@ -29,32 +52,29 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         child: Column(
           children: [
-            // Drawer Header
+            
             Container(
               height: 200,
-              // color: Colors.blue,
               child: Column(
- mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    CircleAvatar(
-      radius: 40, // Yuvarlak çerçeve boyutu
-      backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
-      backgroundColor: Colors.black, // Arka plan rengi
-    ),
-    const SizedBox(height: 10),
-    const Text(
-      'Tarık Karavar',
-      style: TextStyle(
-        color: Colors.black,
-        fontSize: 18,
-      ),
-    ),
-  ],
-),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 40, 
+                    backgroundImage: const AssetImage('assets/images/pp.jpg'), 
+                    backgroundColor: Colors.black, 
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Tarık Karavar',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            // Menü öğeleri
-
-
+            
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
@@ -62,25 +82,20 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-
-        
-
-             ListTile(
+            ListTile(
               leading: const Icon(CupertinoIcons.search),
               title: const Text('Geçmiş'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-
-             ListTile(
+            ListTile(
               leading: const Icon(CupertinoIcons.person),
               title: const Text('Profil'),
               onTap: () {
                 context.go("/profile");
               },
             ),
-
             ListTile(
               leading: const Icon(CupertinoIcons.settings),
               title: const Text('Ayarlar'),
@@ -88,40 +103,48 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-
-            
-
-
           ],
         ),
       ),
 
-      // Ana içerik
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              child: SizedBox(
-                width: double.infinity,
-                child: DotLottieLoader.fromAsset("assets/motions/food.lottie",
-                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single);
-                    } else {
-                      return Container();
-                    }
-                  }
-                
+    
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              const Color.fromARGB(255, 240, 121, 2), // Turuncu
+              Colors.white, // Beyaz
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: DotLottieLoader.fromAsset(
+                    "assets/motions/food.lottie",
+                    frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                      if (dotlottie != null) {
+                        return Lottie.memory(dotlottie.animations.values.single);
+                      } else {
+                        return Container();
+                      }
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
 
-      // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }
@@ -138,53 +161,40 @@ class BottomMenu extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-        IconButton(
-          onPressed: () {
-            context.go("/home");
-          }, 
-          icon: Icon(
-            CupertinoIcons.home,
+          IconButton(
+            onPressed: () {
+              context.go("/home");
+            },
+            icon: const Icon(
+              CupertinoIcons.home,
             ),
-        ),
-    
-        IconButton(
-          onPressed: () {
-            context.go("/search");
-          }, 
-          icon: Icon(
-            CupertinoIcons.search,
+          ),
+          IconButton(
+            onPressed: () {
+              context.go("/search");
+            },
+            icon: const Icon(
+              CupertinoIcons.search,
             ),
-        ),
-    
-                            IconButton(
-          onPressed: () {
-            context.go("/voice");
-          }, 
-          icon: Icon(
-            Icons.android,
+          ),
+          IconButton(
+            onPressed: () {
+              context.go("/voice");
+            },
+            icon: const Icon(
+              Icons.voice_chat,
             ),
-        ),
-    
-                  IconButton(
-          onPressed: () {}, 
-          icon: Icon(
-            CupertinoIcons.video_camera,
+          ),
+          IconButton(
+            onPressed: () {
+              context.go("/profile");
+            },
+            icon: const Icon(
+              CupertinoIcons.person,
             ),
-        ),
-    
-    
-    
-                            IconButton(
-          onPressed: () {
-            context.go("/profile");
-          }, 
-          icon: Icon(
-            CupertinoIcons.person,
-            ),
-        ),
-    
-      ]
-      ,),
+          ),
+        ],
+      ),
     );
   }
 }
