@@ -15,15 +15,34 @@ class _LoginScreenState extends State<LoginScreen> {
 
   
   girisYap() {
-   if (epostaYonetici.text.isEmpty) {
+   if (epostaYonetici.text.isEmpty || sifreYonetici.text.isEmpty) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("Bilgilerinizi Girinizi"),
-        action: SnackBarAction(label: "Kapat", onPressed: () {}),
-
+        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.red,
+        showCloseIcon: true,
         ),
       );
+    } else { 
+        if(sifreYonetici.text.length < 8) {
+             ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Şireniz minimum 8 haneli olmak zorundadır."),
+        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.red,
+        showCloseIcon: true,
+        ),
+      );
+        }
+        else{
+          context.go("/home");
+        }
+        
     }
+    
    }
  
 
@@ -78,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 10),
             
                 
-                ],
+                 ],
                 ),
               ),
             ],
