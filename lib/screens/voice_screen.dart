@@ -9,16 +9,6 @@ class VoiceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 240, 121, 2), 
-              Colors.white, 
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Center(
           child: const Text(
             "Ses ekranım",

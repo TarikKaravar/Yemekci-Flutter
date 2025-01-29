@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 
 import 'home_screen.dart';
@@ -9,45 +10,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56), 
-        child: ClipRRect(
-          child: AppBar(
-            centerTitle: true,
-            backgroundColor: const Color.fromARGB(255, 240, 121, 2),
-            title: const Text(
-              'Her damak tadına uygun tarifler, her an elinizin altında.',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            context.push("/login");
+          },
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-        ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 240, 121, 2),
-              Colors.white, 
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              context.push("/login");
-            },
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            child: const Text("Giriş Yapınız"),
-          ),
+          child: const Text("Giriş Yapınız"),
         ),
       ),
       bottomNavigationBar: BottomMenu(),

@@ -1,6 +1,7 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,20 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(255, 240, 121, 2),
-                const Color.fromARGB(255, 240, 121, 2),
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
           child: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -51,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: Drawer(
-        backgroundColor: Colors.white,
         elevation: 0,
         child: Column(
           children: [
@@ -89,14 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 240, 121, 2),
-              Colors.white,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+          
         ),
         child: Column(
           children: [
@@ -132,15 +115,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-            if (!_isAnimationVisible)
               Expanded(
-                child: Center(
-                  child: const Text(
-                    "",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                ),
-              ),
+                child: ListView(
+                  children: [
+                    Text(
+                      "Heading 1",
+                      style: TextStyle(
+                        fontSize: 38,
+                        
+                      ),
+                    ),
+                    Text("Heading 2"),
+                    Text("Heading 3"),
+                    Text("Heading 4"),
+                 ]
+                )
+              )
           ],
         ),
       ),
