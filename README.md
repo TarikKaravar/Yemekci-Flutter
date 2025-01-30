@@ -94,7 +94,8 @@ lib/widgets
 
 lib/main
 ```
-
+## Demo Video
+https://github.com/user-attachments/assets/8512d8fd-4d28-454a-aaef-3a78f68bf8b7
 
 ## Ekran Görüntüsü
 
