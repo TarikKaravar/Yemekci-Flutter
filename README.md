@@ -85,21 +85,31 @@ lib/screens
 ├── theme_provider.dart
 
 └── voice_screen.dart
+```
 
 
-## Ekran Görüntüleri
-#Aydınlık Tema
+## Ekran Görüntüsü
+
+
+Aydınlık Tema
 ![Image](https://github.com/user-attachments/assets/2ac4bddd-e71b-4094-84e5-f894003254c2)
+
 ![Image](https://github.com/user-attachments/assets/8ead0a1f-aea7-44d6-a168-ce80258ec808)
+
 ![Image](https://github.com/user-attachments/assets/93d24211-50e9-4470-8181-a982006b35f1)
+
 ![Image](https://github.com/user-attachments/assets/fde5e49b-4e47-466b-b4a1-3db1c15d8b4f)
+
 ![Image](https://github.com/user-attachments/assets/ab9215b3-9144-426e-a094-d722d79043e5)
+
 ![Image](https://github.com/user-attachments/assets/810bf0cd-db58-45c3-aa51-9a9de9639fdf)
+
 ![Image](https://github.com/user-attachments/assets/e81d8f7b-db23-401a-84d2-547ff4d7ea0d)
+
 ![Image](https://github.com/user-attachments/assets/0c2cc5af-1302-4a1e-82f5-547be24c95e6)
 
 
-#Karanlık Tema
+Karanlık Tema
 ![Image](https://github.com/user-attachments/assets/07f92808-df68-4537-814b-08e2db8fb677)
 ![Image](https://github.com/user-attachments/assets/4252a563-36b4-405d-be77-0aac573cfe8f)
 ![Image](https://github.com/user-attachments/assets/5c0975aa-9729-450d-bc58-461ef6f9256c)
