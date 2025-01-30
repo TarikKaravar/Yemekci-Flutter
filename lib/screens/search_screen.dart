@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'home_screen.dart'; // Eğer BottomMenu buradaysa, bu import gerekli
+import 'home_screen.dart'; 
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -15,17 +15,17 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   File? _selectedImage;
-  String? _confirmedText; // Onaylanan tarif yazısı burada tutulacak
-  bool _isConfirmed = false; // Tarif onaylandı mı?
+  String? _confirmedText; 
+  bool _isConfirmed = false; 
   final TextEditingController _descriptionController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _loadSavedRecipe(); // Uygulama açıldığında kaydedilen tarifi yükle
+    _loadSavedRecipe(); 
   }
 
-  /// 📌 Kaydedilen tarifi yükle
+  
   Future<void> _loadSavedRecipe() async {
     final prefs = await SharedPreferences.getInstance();
     final savedImagePath = prefs.getString('recipe_image');
@@ -40,7 +40,7 @@ class _SearchScreenState extends State<SearchScreen> {
     }
   }
 
-  /// 📌 Yeni tarif kaydet
+  
   Future<void> _saveRecipe(String imagePath, String text) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('recipe_image', imagePath);
@@ -48,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Future<void> _pickImage() async {
-    // Depolama izni iste
+    
     if (Platform.isAndroid || Platform.isIOS) {
       var status = await Permission.storage.request();
       if (!status.isGranted) {
@@ -64,12 +64,12 @@ class _SearchScreenState extends State<SearchScreen> {
     );
 
     if (result != null && result.files.single.path != null) {
-      print("Dosya Seçildi: ${result.files.single.path}"); // Debug için
+      print("Dosya Seçildi: ${result.files.single.path}");
 
       setState(() {
         _selectedImage = File(result.files.single.path!);
-        _isConfirmed = false; // Yeni fotoğraf seçildiğinde tekrar yazma izni ver
-        _descriptionController.clear(); // Yeni tarif için alanı temizle
+        _isConfirmed = false; 
+        _descriptionController.clear(); 
       });
     } else {
       print("Dosya Seçilmedi!");
@@ -84,14 +84,14 @@ class _SearchScreenState extends State<SearchScreen> {
       _confirmedText = _descriptionController.text;
     });
 
-    // 📌 Tarif kaydediliyor
+    
     _saveRecipe(_selectedImage!.path, _confirmedText!);
-    _descriptionController.clear(); // Yeni tarif için alan temizlendi
+    _descriptionController.clear(); 
   }
 
   @override
   Widget build(BuildContext context) {
-    print("Seçilen Resim: $_selectedImage"); // Debug için
+    print("Seçilen Resim: $_selectedImage"); 
 
     final theme = Theme.of(context);
     final isDarkMode = theme.brightness == Brightness.dark;
@@ -131,7 +131,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 100), // AppBar boşluğu
+                      const SizedBox(height: 100), 
                       if (_selectedImage != null)
                         Column(
                           children: [
@@ -198,7 +198,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20), // Butonu biraz yukarı almak için
+              const SizedBox(height: 20), 
             ],
           ),
         ),
