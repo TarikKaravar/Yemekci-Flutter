@@ -1,4 +1,4 @@
-# Flutter Projesi
+# YEMEKÇİ
 
 ![İstinye Üniversitei](https://www.unitededucation.com/linklogoch/istinye-university-logo.png)
 
@@ -18,12 +18,12 @@
     
 
 ## Özellikler
-
--   [Tarifleri kaydetme]
     
 -   [Kullanıcı girişi]
     
 -   [Yemek tarifleri paylaşma]
+
+-   [Hazır tarifler görme]
     
 
 ## Kullanılan Teknolojiler
@@ -51,7 +51,7 @@
 
 1.  Projeyi bilgisayarınıza indirin:
 
-git  clone [proje-adresi]
+git  clone [yemekci]
 
 2.  Proje klasörüne gidin:
 
