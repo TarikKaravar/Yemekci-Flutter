@@ -11,12 +11,12 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center( // Ortalamak için Center kullanıldı
+      body: Center( 
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 200, // Logoyu büyüttüm
+              width: 200, 
               height: 200,
               alignment: Alignment.center,
               child: Image.asset(
@@ -25,7 +25,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 30), // Boşluk artırıldı
+            const SizedBox(height: 30), 
 
             InkWell(
               onTap: () => context.go("/home"),

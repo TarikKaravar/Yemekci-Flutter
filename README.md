@@ -98,7 +98,13 @@ Aydınlık Tema
 
 ![Image](https://github.com/user-attachments/assets/93d24211-50e9-4470-8181-a982006b35f1)
 
-![Image](https://github.com/user-attachments/assets/fde5e49b-4e47-466b-b4a1-3db1c15d8b4f)
+![Image](https://github.com/user-attachments/assets/c1b3591a-0719-4b44-8930-e456ed475722)
+
+![Image](https://github.com/user-attachments/assets/50d9a0cd-9a42-42ac-a7dc-8dc0192a8dca)
+
+![Image](https://github.com/user-attachments/assets/dbed4c81-5b2a-446f-8682-7ac04f011192)
+
+![Image](https://github.com/user-attachments/assets/9084a2ef-c98c-42b7-a4ed-7c6e4c06f7ed)
 
 ![Image](https://github.com/user-attachments/assets/ab9215b3-9144-426e-a094-d722d79043e5)
 
@@ -111,11 +117,17 @@ Aydınlık Tema
 
 Karanlık Tema
 ![Image](https://github.com/user-attachments/assets/07f92808-df68-4537-814b-08e2db8fb677)
+
 ![Image](https://github.com/user-attachments/assets/4252a563-36b4-405d-be77-0aac573cfe8f)
-![Image](https://github.com/user-attachments/assets/5c0975aa-9729-450d-bc58-461ef6f9256c)
+
+![Image](https://github.com/user-attachments/assets/7500f7a2-2abe-4a84-957f-7b27f927fcb0)
+
 ![Image](https://github.com/user-attachments/assets/6f19cca5-bcae-4f79-bf16-2fc5e149ce82)
+
 ![Image](https://github.com/user-attachments/assets/81bb23a8-60a0-4d6c-83d7-d2c89d932843)
+
 ![Image](https://github.com/user-attachments/assets/473fe181-5f0d-45f8-8d58-2155f9122fef)
+
 ![Image](https://github.com/user-attachments/assets/b27a056d-e4a9-4440-bfcd-9a1970f24e56)
 
 
