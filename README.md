@@ -68,23 +68,31 @@ assets/
 ├── images/ # Uygulamda Kullanılan Görsellerin Tutulduğu Kısım
 ├── motions/ # Uygulamda Kullanılan Animasyonların Tutulduğu Kısım
 
+lib/
+
+lib/core
+├──contants.dat
+├──routes.dart
+├──theme_provider.dart
+└──themes.dart
 lib/screens
-
 ├── home_screen.dart
-
 ├── loading_screen.dart
-
 ├── login_screen.dart
-
 ├── profile_screen.dart
-
 ├── register_screen.dart
-
 ├── search_screen.dart
-
 ├── theme_provider.dart
-
 └── voice_screen.dart
+
+lib/services
+├──api.dart
+
+lib/widgets
+├──bttom_menu.dart
+├──logo.dart
+
+lib/main
 ```
 
 
