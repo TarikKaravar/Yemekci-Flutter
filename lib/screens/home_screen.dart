@@ -110,10 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
+              leading:  const Icon(Icons.upload),
+              title: const Text('Tarif Yükle'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/search");
               },
             ),
           ],

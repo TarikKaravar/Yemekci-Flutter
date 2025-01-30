@@ -11,39 +11,38 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox.expand(
+      body: Center( // Ortalamak için Center kullanıldı
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Expanded(
-              child: Container(
-                width: 150,
-                height: 150,
-                child: Image.asset(
-                  'assets/images/logo.webp',
-                  fit: BoxFit.contain,
-                ),
+            Container(
+              width: 200, // Logoyu büyüttüm
+              height: 200,
+              alignment: Alignment.center,
+              child: Image.asset(
+                'assets/images/logo.webp',
+                fit: BoxFit.contain,
               ),
             ),
-            
+
+            const SizedBox(height: 30), // Boşluk artırıldı
+
             InkWell(
-              onTap:() => context.go("/home"),
+              onTap: () => context.go("/home"),
               child: SizedBox(
                 width: 150,
-                child: DotLottieLoader.fromAsset("assets/motions/loading1.lottie",
-                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                child: DotLottieLoader.fromAsset(
+                  "assets/motions/loading1.lottie",
+                  frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
                     if (dotlottie != null) {
                       return Lottie.memory(dotlottie.animations.values.single);
                     } else {
                       return Container();
                     }
-                  }
-                
+                  },
                 ),
               ),
-            ),  
-
-            SizedBox(height: 20),
-
+            ),
           ],
         ),
       ),
