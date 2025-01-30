@@ -1,9 +1,6 @@
-import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,28 +10,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _isAnimationVisible = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: Container(
           child: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: const Text(
+            title: Text(
               'Ana Sayfa',
               style: TextStyle(
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontWeight: FontWeight.bold,
               ),
             ),
             actions: [
               IconButton(
-                icon: const Icon(CupertinoIcons.app, color: Colors.black),
+                icon: const Icon(CupertinoIcons.moon),
                 onPressed: () {},
               ),
             ],
@@ -45,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         child: Column(
           children: [
-            const SizedBox(height: 16), // Boşluk
+            const SizedBox(height: 16),
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
@@ -55,9 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               leading: const Icon(CupertinoIcons.search),
-              title: const Text('Geçmiş'),
+              title: const Text('Örnek Tarifler'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/voice");
               },
             ),
             ListTile(
@@ -77,79 +71,42 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          
-        ),
-        child: Column(
-          children: [
-            if (_isAnimationVisible)
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: DotLottieLoader.fromAsset(
-                      "assets/motions/deneme2.lottie",
-                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                        if (dotlottie != null) {
-                          return Lottie.memory(
-                            dotlottie.animations.values.single,
-                            repeat: false,
-                            onLoaded: (composition) {
-                              Future.delayed(
-                                composition.duration,
-                                () {
-                                  setState(() {
-                                    _isAnimationVisible = false;
-                                  });
-                                },
-                              );
-                            },
-                          );
-                        } else {
-                          return Container();
-                        }
-                      },
+      body: Column(
+        children: [
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 6,
+                      offset: const Offset(0, 4),
                     ),
-                  ),
+                  ],
+                ),
+                child: Image.asset(
+                  'assets/images/tarif.jpg', 
+                  fit: BoxFit.cover,
                 ),
               ),
-              Expanded(
-                child: ListView(
-                  children: [
-                    Text(
-                      "body smal txt",
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                    Text(
-                      "Heading 2",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    Text(
-                      "Heading 3",
-                      style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                    Text(
-                      "Heading 4",
-                      style: Theme.of(context).textTheme.displaySmall,
-                      ),
-                 ]
-                )
-              )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
-      
       bottomNavigationBar: const BottomMenu(),
     );
   }
 }
 
 class BottomMenu extends StatelessWidget {
-  const BottomMenu({
-    super.key,
-  });
+  const BottomMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +125,7 @@ class BottomMenu extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.go("/search");
+              context.go("/voice");
             },
             icon: const Icon(
               CupertinoIcons.search,
@@ -176,10 +133,10 @@ class BottomMenu extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.go("/voice");
+              context.go("/search");
             },
             icon: const Icon(
-              Icons.voice_chat,
+              Icons.download,
             ),
           ),
           IconButton(
