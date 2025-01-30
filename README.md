@@ -64,9 +64,9 @@ flutter  run
 
 ```
 assets/
-├── /icons # Uygulamada Kullanılan İconların Tutulduğu Kısım
-├── images/ # Uygulamda Kullanılan Görsellerin Tutulduğu Kısım
-├── motions/ # Uygulamda Kullanılan Animasyonların Tutulduğu Kısım
+├── /icons 
+├── images 
+├── motions 
 
 lib/
 
